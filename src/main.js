@@ -1,19 +1,19 @@
 /*
-    JS入口文件：创建vue实例对象
+  入口JS：创建vue实例对象
 */
 import Vue from 'vue'
-// 1、引入标签
-import App from './App.vue'
+import App from './App.vue'  // 1、引入组件
+import './base.css'  // 引入base样式
 import store from './store'
 
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
-  // 2、将组件映射成标签
-  components: {
+  components: { // 2、将组件映射成标签
     App
   },
-  // 3、使用标签
-  template: '<App/>',
-  // 4、配置store对象，会给vm/组件对象都添加$store对象属性，该对象中包含state/getters/dispatch方法
+  // 3、使用组件标签
+  template: '<App />',
   store
 })
+
