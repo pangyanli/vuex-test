@@ -9,7 +9,7 @@ export default {
     return state.todos.reduce((preTodo, todo) => preTodo + (todo.completed ? 1 : 0 ),0)
   },
   // 3、判断是否全选
-  isAllCompleted(getters){ // 因为state中只有todos
+  isAllCompleted(state,getters){ // 注意，第一个参数必须是state,但是因为state中只有todos,而getters中有
     return getters.completedCount === getters.totalCount && getters.totalCount>0
   }
 
